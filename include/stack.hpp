@@ -1,7 +1,7 @@
 #pragma once
 
 
-struct Stack
+class Stack
 {
     struct Link
     {
@@ -12,6 +12,7 @@ struct Stack
 
     Link *head;
 
+public:
     void initialize();
     void push(void *_data);
     void *peek();
