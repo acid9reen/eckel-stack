@@ -7,15 +7,16 @@ class Stack
     {
         void *data;
         Link *next;
-        void initialize(void *_data, Link *_next);
+        Link(void *_data, Link *_next);
+        ~Link();
     };
 
     Link *head;
 
 public:
-    void initialize();
+    Stack();
+    ~Stack();
     void push(void *_data);
     void *peek();
     void *pop();
-    void cleanup();
 };

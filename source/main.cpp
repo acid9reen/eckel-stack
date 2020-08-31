@@ -9,7 +9,6 @@ int main(int argc, char *argv[])
 {
     std::ifstream in(argv[0]);
     Stack textlines;
-    textlines.initialize();
     std::string line;
 
     while(getline(in, line))
@@ -23,5 +22,4 @@ int main(int argc, char *argv[])
         delete s;
     }
 
-    textlines.cleanup();
 }

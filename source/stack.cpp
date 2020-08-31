@@ -1,21 +1,25 @@
 #include "stack.hpp"
 #include <iostream>
 
-void Stack::Link::initialize(void *_data, Link *_next)
+// Link realization
+Stack::Link::Link(void *_data, Link *_next)
 {
     data = _data;
     next = _next;
 }
 
-void Stack::initialize()
+Stack::Link::~Link(){};
+
+
+// Stack realization
+Stack::Stack()
 {
     head = 0;
 }
 
 void Stack::push(void *_data)
 {
-    Link *new_link = new Link;
-    new_link->initialize(_data, head);
+    Link *new_link = new Link(_data, head);
     head = new_link;
 }
 
@@ -41,7 +45,7 @@ void *Stack::pop()
     return result;
 }
 
-void Stack::cleanup()
+Stack::~Stack()
 {
     if(head != 0)
         std::cout << "Stack is not empty" << std::endl;
